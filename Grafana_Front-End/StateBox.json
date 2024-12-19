@@ -1,0 +1,102 @@
+{
+  "datasource": {
+    "type": "datasource",
+    "uid": "grafana"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "mappings": [
+        {
+          "options": {
+            "0": {
+              "color": "dark-green",
+              "index": 0,
+              "text": "SAFE"
+            }
+          },
+          "type": "value"
+        },
+        {
+          "options": {
+            "from": 1,
+            "result": {
+              "color": "dark-red",
+              "index": 1,
+              "text": "UNSAFE"
+            },
+            "to": 15
+          },
+          "type": "range"
+        }
+      ],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "dark-red",
+            "value": null
+          }
+        ]
+      },
+      "color": {
+        "mode": "thresholds"
+      },
+      "unit": "short"
+    },
+    "overrides": []
+  },
+  "gridPos": {
+    "h": 8,
+    "w": 2,
+    "x": 0,
+    "y": 0
+  },
+  "id": 21,
+  "options": {
+    "reduceOptions": {
+      "values": false,
+      "calcs": [
+        "lastNotNull"
+      ],
+      "fields": ""
+    },
+    "orientation": "auto",
+    "textMode": "auto",
+    "wideLayout": true,
+    "colorMode": "background",
+    "graphMode": "none",
+    "justifyMode": "auto"
+  },
+  "pluginVersion": "10.2.3",
+  "targets": [
+    {
+      "buffer": 1000,
+      "channel": "stream/prometheus_ground_sys_octocoupler/octovals",
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "filter": {
+        "fields": []
+      },
+      "queryType": "measurements",
+      "refId": "A"
+    }
+  ],
+  "title": "State",
+  "transformations": [
+    {
+      "id": "calculateField",
+      "options": {
+        "alias": "",
+        "mode": "reduceRow",
+        "reduce": {
+          "reducer": "sum"
+        },
+        "replaceFields": true
+      }
+    }
+  ],
+  "transparent": true,
+  "type": "stat"
+}

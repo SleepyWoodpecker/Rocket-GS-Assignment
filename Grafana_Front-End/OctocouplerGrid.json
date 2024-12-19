@@ -1,0 +1,328 @@
+{
+  "datasource": {
+    "type": "datasource",
+    "uid": "grafana"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "dark-red",
+            "value": null
+          }
+        ]
+      },
+      "color": {
+        "mode": "thresholds"
+      },
+      "unit": "none"
+    },
+    "overrides": [
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "ignite"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "IGNITE"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "OPENED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "mpv"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "‎MPV"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "OPENED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "purge"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "PURGE‎"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "OPENED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "qd"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "‎QD"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "OPENED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "siren"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "FREAK"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "OFF"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "ON"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "fill"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "‎FILL"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "CLOSED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "OPENED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "vent"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "‎VENT"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "OPENED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "CLOSED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "dump"
+        },
+        "properties": [
+          {
+            "id": "displayName",
+            "value": "‎DUMP"
+          },
+          {
+            "id": "mappings",
+            "value": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "OPENED"
+                  },
+                  "1": {
+                    "color": "dark-green",
+                    "index": 1,
+                    "text": "CLOSED"
+                  }
+                },
+                "type": "value"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "gridPos": {
+    "h": 8,
+    "w": 8,
+    "x": 2,
+    "y": 0
+  },
+  "id": 22,
+  "options": {
+    "reduceOptions": {
+      "values": false,
+      "calcs": [
+        "lastNotNull"
+      ],
+      "fields": ""
+    },
+    "orientation": "auto",
+    "textMode": "auto",
+    "wideLayout": true,
+    "colorMode": "background_solid",
+    "graphMode": "area",
+    "justifyMode": "center",
+    "text": {
+      "titleSize": 40,
+      "valueSize": 25
+    }
+  },
+  "pluginVersion": "10.2.3",
+  "targets": [
+    {
+      "buffer": 1000,
+      "channel": "stream/prometheus_ground_sys_octocoupler/octovals",
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "filter": {
+        "fields": []
+      },
+      "queryType": "measurements",
+      "refId": "A"
+    }
+  ],
+  "title": "Optocoupler",
+  "transformations": [],
+  "transparent": true,
+  "type": "stat"
+}
