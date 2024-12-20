@@ -135,17 +135,13 @@
   },
   "targets": [
     {
-      "channel": "stream/prometheus_ground_sys/sensorvals2",
+      "channel": "stream/prometheus_ground_sys/sensorvals",
       "datasource": {
         "type": "datasource",
         "uid": "grafana"
       },
       "filter": {
-        "fields": [
-          "time",
-          "lc1",
-          "lc2"
-        ]
+        "fields": ["time", "lc1", "lc2"]
       },
       "queryType": "measurements",
       "refId": "A"

@@ -263,22 +263,13 @@
   },
   "targets": [
     {
-      "channel": "stream/prometheus_ground_sys/sensorvals2",
+      "channel": "stream/prometheus_ground_sys/sensorvals",
       "datasource": {
         "type": "datasource",
         "uid": "grafana"
       },
       "filter": {
-        "fields": [
-          "time",
-          "labels",
-          "pt1",
-          "pt2",
-          "pt3",
-          "pt4",
-          "pt5",
-          "pt6"
-        ]
+        "fields": ["time", "labels", "pt1", "pt2", "pt3", "pt4", "pt5", "pt6"]
       },
       "queryType": "measurements",
       "refId": "A"

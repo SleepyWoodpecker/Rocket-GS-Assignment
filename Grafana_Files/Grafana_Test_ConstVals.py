@@ -54,12 +54,15 @@ while True:
         line = line.strip().replace(" ", "")  # Clean the input line
         # Split the input line into individual values
         data = line.split(',')
+
         opto_dataa = ", ".join(data[-1])
         print(opto_dataa)
         opto_data = [int(x.strip()) for x in opto_dataa.split(',')]
         sensor_data = data[:-1]
         print(sensor_data)
         packet_counter = 0
+        
+        
         fields = ''
         for key, val in zip(field_keys, sensor_data):
             fields += f'{key}={val},'
@@ -68,6 +71,8 @@ while True:
         print(influx_string)
         UDPClientSocket.sendto(influx_string.encode(), serverAddressPort)
         fields2 = ''
+
+
         for key2, val2 in zip(field_keys2, opto_data):
             fields2 += f'{key2}={val2},'
         fields2 = fields2.strip(',')
@@ -75,4 +80,4 @@ while True:
         print(influx_string2)
         UDPClientSocket.sendto(influx_string2.encode(), serverAddressPort2)
 
-        time.sleep(0.24) #--> COMMENT THIS
+        time.sleep(1) #--> COMMENT THIS
