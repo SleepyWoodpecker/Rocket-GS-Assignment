@@ -1,11 +1,17 @@
-**Getting GUI Running**
+![image](assets/Grafana_task.png)
 
-1. After looking through `Grafana_Files`, I have established that I should be using `Grafana_Test_ConstVals.py` or `Grafana_Test_RandomVals.py` to send data to the telegraf server, since these are the files that do not require reading data from a serial port
-2. I also need to install the following packagaes:
-   a. Grafana
-   b. Telegraf
-   c. Influx DB
-3. I also need to set up a websocket for telegraf to communicate with grafana.
-   a. For this, I referred to this tutorial: https://grafana.com/tutorials/stream-metrics-from-telegraf-to-grafana/
-   b. Because the use of an API token is outdated, I used a service account's token instead
-   c. Given this websocket url: `ws://localhost:3000/api/live/push/prometheus_ground_sys`, the channel to read from is: `stream/prometheus_ground_sys/\<header of influx string\>`
+**Setup Instructions**
+
+1. Install the following packages & verify that they have been installed
+   a. Grafana | Verify installation using `grafana -v`
+   b. Telegraf | Verify installation using `telegraf --version`
+2. On Mac, start the grafana server using `brew services start grafana`
+3. In separate **new terminal windows**, start the telegraf agents using the following commands
+   a. Sensor readings: `telegraf --config Grafana_Files/OctocouplerStates.conf`
+   b. Octocoupler: `telegraf --config Grafana_Files/OctocouplerStates.conf`
+4. Run the python script to stream data to the telegraf server. The following commands correspond to the python scripts for the following tasks:
+   a. (Task 1) Test with random data: `python Grafana_Files/Grafana_Test_RandomVals.py`
+   b. (Task 2) Test with gaussian data: `python Grafana_Files/Grafana_With_Gaussian.py`
+   c. (Task 2) Test with sinusoidal data: `python Grafana_Files/Grafana_With_Sinusoidal.py`
+   d. (Task 3) Test with 10 data sensors: `python Grafana_Files/Grafana_With_Ten.py`
+   e. (Bonus) Test with CSV files: `python Grafana_Files/Grafana_From_CSV.py`
