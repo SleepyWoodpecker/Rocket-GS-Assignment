@@ -8,15 +8,18 @@
 
    2. Telegraf | Verify installation using `telegraf --version`
 
-2. On Mac, start the grafana server using `brew services start grafana`
+2. Start the granfana server
+   1. Mac: `brew services start grafana`
 
-3. In separate **new terminal windows**, start the telegraf agents using the following commands
+   2. Windows: Navigate to the installation path of grafana. File path should look something like: `GrafanaLabs/grafana/bin/grafana-server.exe`
+
+4. In separate **NEW TERMINAL WINDOWS**, start the telegraf agents using the following commands
 
    1. Sensor readings: `telegraf --config Grafana_Files/OctocouplerStates.conf`
 
    2. Octocoupler: `telegraf --config Grafana_Files/OctocouplerStates.conf`
 
-4. Run the python script to stream data to the telegraf server. The following commands correspond to the python scripts for the following tasks:
+5. Run a python script to stream the desired data to the telegraf servers. The following commands correspond to the python scripts for the following tasks:
 
    1. (Basic Setup) Test with random data: `python Grafana_Files/Grafana_Test_RandomVals.py`
 
@@ -26,4 +29,4 @@
 
    4. (New GUI) Test with 10 data sensors: `python Grafana_Files/Grafana_With_Ten.py`
 
-   5. (Hotfire Data) Test with CSV files: `python Grafana_Files/Grafana_From_CSV.py`
+   5. (Hotfire data) Test with CSV files: `python Grafana_Files/Grafana_From_CSV.py`
