@@ -16,21 +16,21 @@
 
 3. In separate **NEW TERMINAL WINDOWS**, cd into the telegraf folder & start the telegraf agents using the following commands
 
-   1. Sensor readings: `telegraf --config Grafana_Files/OctocouplerStates.conf`
+   1. Sensor readings: `telegraf --config telegraf/OctocouplerStates.conf`
 
-   2. Octocoupler: `telegraf --config Grafana_Files/OctocouplerStates.conf`
+   2. Octocoupler: `telegraf --config telegraf/OctocouplerStates.conf`
 
 4. Run a python script to stream the desired data to the telegraf servers. The following commands correspond to the python scripts for the following tasks:
 
-   1. (Basic Setup) Test with random data: `python Grafana_Files/Grafana_Test_RandomVals.py`
+   1. (Basic Setup) Test with random data: `python Grafana_Backend/Grafana_Test_RandomVals.py`
 
-   2. (Gaussian Data) Test with gaussian data: `python Grafana_Files/Grafana_With_Gaussian.py`
+   2. (Gaussian Data) Test with gaussian data: `python Grafana_Backend/Grafana_With_Gaussian.py`
 
-   3. (Sinusoidal Data) Test with sinusoidal data: `python Grafana_Files/Grafana_With_Sinusoidal.py`
+   3. (Sinusoidal Data) Test with sinusoidal data: `python Grafana_Backend/Grafana_With_Sinusoidal.py`
 
-   4. (New GUI) Test with 10 data sensors: `python Grafana_Files/Grafana_With_Ten.py`
+   4. (New GUI) Test with 10 data sensors: `python Grafana_Backend/Grafana_With_Ten.py`
 
-   5. (Hotfire data) Test with CSV files: `python Grafana_Files/Grafana_From_CSV.py`
+   5. (Hotfire data) Test with CSV files: `python Grafana_Backend/Grafana_From_CSV.py`
 
 5. To visualize your data on grafana, go to localhost:3000 on your browser and perform the following steps. Note: this requires you to have already run `brew services start grafana`
 
