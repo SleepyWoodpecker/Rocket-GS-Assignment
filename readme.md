@@ -51,3 +51,10 @@
    1. Create a new service account
    2. Home > Dashboards > New dashboard > Import dashboard
    3. Choose the corresponding .json dashboard from /Grafana_Frontend, or build your own using the templates in Grafana_Frontend/template_panels
+
+Common Errors
+
+- Having more than one python version installed
+- Not creating a virtual environment to install pyserial
+- not all BAUDRATES are supported
+- check that you are using the correct device port
