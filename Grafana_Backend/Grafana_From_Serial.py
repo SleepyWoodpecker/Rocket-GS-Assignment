@@ -4,7 +4,7 @@ import time
 import socket
 
 PORT = '/dev/tty.usbserial-0001'  # Might need to change this based on your device
-BAUDRATE = 9600  # Might need to change this based on your device
+BAUDRATE = 115200  # Might need to change this based on your device
 ser = Serial(PORT, BAUDRATE, timeout=0.1)
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 pressure_transducer_port = ("127.0.0.1", 4001)
@@ -50,6 +50,7 @@ def main():
             if pt_data.startswith('A') and pt_data.endswith('Z'):
                 # Remove the 'A' at the start and 'Z' at the end
                 pt_data = pt_data[1:-1]
+
                 
                 # Add the timestamp at the end (you can modify this based on your needs)
                 pt_data += " " + str(current_time)
@@ -58,7 +59,7 @@ def main():
                 print(pt_data)
                 
                 # Write data to CSV
-                writeToCSV(pt_data, writer)
+                # writeToCSV(pt_data, writer)
                 
                 # Send data via UDP
                 UDPClientSocket.sendto(pt_data.encode(), pressure_transducer_port)
@@ -66,3 +67,6 @@ def main():
             # Sleep for a short duration before reading the next value
 
 main()
+
+# encoded string should be in this format
+# b'sensorvals pt0=482.60169,pt1=586.3529,pt2=-4.77855,pt3=-61.87105,pt4=1.03304,pt5=339.3728,pt6=34.07698,pt7=98.41807,pt8=3557.51375,pt9=13.36228,lc1=165.83 1739421534544163000'

@@ -21,19 +21,18 @@ def main(pt_file: csv.DictReader, thrust_file: csv.DictReader):
         pt_row = next(pt_file)
         thrust_row = next(thrust_file).split(",")
         pt_row.append(thrust_row[1])
+        # pt_row == ['1713734909236', '482.60169', '586.3529', '-4.77855', '-61.87105', '1.03304', '339.3728', '34.07698', '98.41807', '3557.51375', '13.36228', '165.83']
+        # should set default values to zero
         encoded_pt_data = format_list_to_influx(
             pt_row, pt_keys, pt_channel, current_time
         )
         print(encoded_pt_data)
         UDPClientSocket.sendto(encoded_pt_data, pressure_transducer_port)
-
         time.sleep(0.1)
 
 def format_list_to_influx(
     data: list[int | float], keys: list[str], channel: str, current_time: int
 ) -> bytes:
-    print(data)
-    print(keys)
     data_string = ""
     for key, val in zip(keys, data[1:]):
         data_string += f"{key}={val},"
