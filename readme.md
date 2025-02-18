@@ -1,6 +1,6 @@
 ![image](assets/Grafana_task.png)
 
-**Setup Instructions**
+# Setup Instructions
 
 1. Install the following packages & verify that they have been installed
 
@@ -58,3 +58,8 @@ Common Errors
 - Not creating a virtual environment to install pyserial
 - not all BAUDRATES are supported
 - check that you are using the correct device port
+
+## Cool things that you can try
+
+1. profile the performance of the code using the following command (requires the installation of `py-spy`)
+   - `sudo py-spy record -o <output image name>.svg -- python <python file>.py`
