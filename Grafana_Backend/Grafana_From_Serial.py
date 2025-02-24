@@ -40,12 +40,19 @@ def main():
         # Write the header if the file is empty
         if file.tell() == 0:
             writer.writerow(['pt1', 'pt2', 'pt3', 'pt4', 'pt5', 'pt6', 'lc1', 'lc2', 'timestamp'])
+
+        # before the reading from the serial buffer, flush everything that 
+        # is currently there (might have builtup from stopping and starting the script)
+        ser.reset_input_buffer()  # Flushes the receive buffer
+
+        # read until the next message string
+        ser.read_until(b"Z\n")
         
         # Read the data and stream
         while True:
             # Get current timestamp for Grafana to display the data
             current_time = time.time_ns()
-            pt_data = ser.readline().decode().strip()
+            pt_data = ser.read_until(b"\n").decode().strip()
             
             if pt_data.startswith('A') and pt_data.endswith('Z'):
                 # Remove the 'A' at the start and 'Z' at the end
